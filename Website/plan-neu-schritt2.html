@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <img src="assets/img/Bild.png" alt="bild">
+        Study Planner
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html">Semesterpläne</a>
+            </li>
+            <li>
+                <a href="plan.html">Semesterplan - Detailseite</a>
+            </li>
+            <li>
+                <a href="index.html">Kurs - Detailseite</a>
+            </li>
+        </ul>
+    </nav>
+    <section>
+        <h2>Daten & Auswahl Kurse</h2>
+        <form action="https://labs.inf.fh-dortmund.de/planService/testCreatePlan.php" method="POST">
+            <fieldset>
+                <p>
+                    <label>Name: 
+                        <!-- ^[a-zA-Z0-9-]{1,150}$ -->
+                        <input autofocus required patter="[a-zA-Z0-9-]+" name="Name" maxlength="150">
+                    </label>
+                </p>
+                <p> 
+                    <label>Semester:
+                        <input name="Sommersemester" value="So" type="radio" checked>Sommersemester
+                        <input name="Wintersemester" value="Wi" type="radio">Wintersemester
+                    </label>
+                </p>
+                <p>
+                    <label>Jahr: 
+                        <input required name="Jahr" value="2022">
+                    </label>
+                </p>
+                <p>
+                    Kurse: 
+                    <label>
+                        <input name="Kurse[]" type="checkbox">Web-Technologien
+                    </label>
+                    <label>
+                        <input name="Kurse[]" type="checkbox">PK2
+                    </label>
+                    <label>
+                        <input name="Kurse[]" type="checkbox">Datenbanken 1
+                    </label>
+                </p>
+                <p>
+                    <input type="submit" name="Absende Button" value="Absenden">
+                </p>
+            </fieldset>
+        </form>
+    </section>
+    <footer>
+        &copy; 2023 Study Planner
+    </footer>
+</body>
+</html>
