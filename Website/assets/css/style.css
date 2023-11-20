@@ -1,3 +1,11 @@
 h1{
-    
+    color: rgb(42, 152, 189);
+    text-shadow: 1px 1px black;
+    text-decoration: underline;
+    font-size: 3em;
+}
+
+h2{
+    color: black;
+    font-weight: bolder;
 }
