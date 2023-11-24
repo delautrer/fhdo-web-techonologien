@@ -6,6 +6,15 @@ h1{
 }
 
 h2{
-    color: black;
+    color: orange;
     font-weight: bolder;
+}
+nav, aside{
+    background-color: lightblue;
+}
+nav ul li a{
+    text-decoration:none;
+}
+section.haupt-section>h2, main section span {
+    font-weight: bold;
 }
