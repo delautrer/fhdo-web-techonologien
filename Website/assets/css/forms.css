@@ -1,0 +1,38 @@
+button{
+    background-color: orange;
+    color: white;
+    border: white;
+    border-radius: 2px;
+    padding: 5px;
+}
+button:hover{
+    background-color: grey;
+    border-radius: 5px;
+    color: red;
+}
+label#erforderlich::after{
+content: "(erforderlich)";
+}
+label input:active{
+    background-color: lightpink;
+}
+legend{
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    padding: 5 10px;
+}
+fieldset fieldset{
+    border-radius: 5px;
+    border-bottom: 1px;
+    border-right: 1px;
+}
+/* Funktioniert nicht
+fieldset h2{
+    background: linear-gradient(to bottom right right, blue, white);
+}
+
+- NR 1.2 fehlt sowie die Rand-anpassung der Eingabeelemente
+- NR 2 fehlt
+- NR 3 fehlt
+*/

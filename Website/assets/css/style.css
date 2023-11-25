@@ -18,3 +18,7 @@ nav ul li a{
 section.haupt-section>h2, main section span {
     font-weight: bold;
 }
+fieldset span, fieldset legend{
+    font-weight: bold;
+}
+

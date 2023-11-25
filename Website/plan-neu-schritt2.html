@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/forms.css">
     <title>Document</title>
 </head>
 <body>
@@ -24,41 +25,51 @@
         </ul>
     </nav>
     <main>
-        <h2>Daten & Auswahl Kurse</h2>
         <form action="https://labs.inf.fh-dortmund.de/planService/testCreatePlan.php" method="POST">
             <fieldset>
-                <p>
-                    <label>Name: 
-                        <!-- ^[a-zA-Z0-9-]{1,150}$ -->
-                        <input autofocus required patter="[a-zA-Z0-9-]+" name="name" maxlength="150">
-                    </label>
-                </p>
-                <p> 
-                    <label>Semester:
-                        <input name="semester" value="Sommersemester" type="radio" checked>Sommersemester
-                        <input name="semester" value="Wintersemester" type="radio">Wintersemester
-                    </label>
-                </p>
-                <p>
-                    <label>Jahr: 
-                        <input required name="jahr" value="2022">
-                    </label>
-                </p>
-                <p>
-                    Kurse: 
-                    <label>
-                        <input name="kurse[]" value="Web" type="checkbox">Web-Technologien
-                    </label>
-                    <label>
-                        <input name="kurse[]" value="PK2" type="checkbox">PK2
-                    </label>
-                    <label>
-                        <input name="kurse[]" value="DB1" type="checkbox">Datenbanken 1
-                    </label>
-                </p>
-                <p>
-                    <input type="submit" name="Absende Button" value="Absenden">
-                </p>
+                <h2>Neuen Semesterplan erstellen: Schritt 2</h2>
+                <fieldset>
+                    <legend>BASISDATEN</legend>
+                    <p>
+                        <p><b>Studiengang: Wirtschafsinf. BPO 2023</b></p>
+                        <label id="erforderlich"><span>Name:</span> 
+                            <!-- ^[a-zA-Z0-9-]{1,150}$ -->
+                            <input autofocus required pattern="[a-zA-Z0-9-]+" name="name" maxlength="150">
+                        </label>
+                    </p>
+                </fieldset> 
+                <br>
+                <fieldset> 
+                    <legend>SEMESTER</legend>
+                    <p> 
+                        <label><span>Semester:</span>
+                            <input name="semester" value="Sommersemester" type="radio" checked>Sommersemester
+                            <input name="semester" value="Wintersemester" type="radio">Wintersemester
+                        </label>
+                    </p>
+                    <p>
+                        <label id="erforderlich"><span>Jahr: </span>
+                            <input class="erforderlich" required name="jahr" value="2022">
+                        </label>
+                    </p>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>KURSE</legend>
+                    <p>
+                        <label><span>Kurse:</span> 
+                            <input name="kurse[]" value="Web" type="checkbox">Web-Technologien
+                        </label>
+                        <label>
+                            <input name="kurse[]" value="PK2" type="checkbox">PK2
+                        </label>
+                        <label>
+                            <input name="kurse[]" value="DB1" type="checkbox">Datenbanken 1
+                        </label>
+                    </p>
+                </fieldset>
+                <br>
+                <button type="submit">senden</button>
             </fieldset>
         </form>
     </main>
