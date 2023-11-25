@@ -21,6 +21,7 @@ legend{
     color: white;
     border-radius: 5px;
     padding: 5 10px;
+    text-transform: uppercase;
 }
 fieldset fieldset{
     border-radius: 5px;
@@ -33,6 +34,7 @@ fieldset h2{
 }
 
 - NR 1.2 fehlt sowie die Rand-anpassung der Eingabeelemente
+    - Überschrift (plan-neu-schritt2.html (h2: "Neuen Semesterplan erstellen: Schritt 2")) verblasst nicht
 - NR 2 fehlt
 - NR 3 fehlt
 */
