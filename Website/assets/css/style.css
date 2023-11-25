@@ -8,17 +8,14 @@ h2{
     color: orange;
     font-weight: bolder;
 }
-nav, aside{
+aside{
     background-color: lightblue;
-    padding: 1 0 1 0px;
-
 }
 nav ul li a{
     text-decoration:none;
     background-color: rgb(93, 93, 253);
     color: white;
     padding: 3px;
-
     font-size: 14px;
 }
 section.haupt-section>h2, main section span {
@@ -39,6 +36,27 @@ nav a:hover{
     background-color: grey;
 }
 nav{
+    margin-bottom: 5px;
+}
+nav ul{
+    background-color: lightblue;
+    padding: 10px;
+    text-align: center;
+}
+table#kurse thead tr{
+    color: red;
+    
+}
+table#kurse tbody tr:nth-of-type(2n+2){
+    color:rgb(42, 152, 189);
+}
+body{
+    font-family: Helvetica;
+}
+table, th, tr, td{
+    border: 1px solid black;
+}
+table{
     margin-bottom: 5px;
 }
 
