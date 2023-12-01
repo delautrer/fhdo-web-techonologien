@@ -21,10 +21,7 @@ aside {
 }
 nav ul li a {
   text-decoration: none;
-  background-color: rgb(93, 93, 253);
   color: white;
-  padding: 3px;
-  font-size: 14px;
 }
 section.haupt-section > h2,
 main section span {
@@ -41,19 +38,23 @@ aside {
 }
 nav ul li {
   display: inline;
+  padding: 10px 15px;
+  font-size: 14px;
+  background-color: rgb(93, 93, 253);
 }
 nav a:hover {
   background-color: grey;
 }
 header nav {
   position: sticky;
-  top: 210px;
   margin-bottom: 5px;
 }
 nav ul {
   background-color: lightblue;
   padding: 10px;
-  text-align: center;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
 }
 table#kurse thead tr {
   color: red;
@@ -83,4 +84,10 @@ header {
 footer {
   position: sticky;
   align-items: end;
+}
+@media screen and (max-width: 794px) {
+  nav ul {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
 }
