@@ -4,36 +4,42 @@
 - Überschrift (plan-neu-schritt2.html (h2: "Neuen Semesterplan erstellen: Schritt 2")) 
   verblasst nicht (siehe bild in Aufgabe)
 */
-button{
-    background-color: orange;
-    color: white;
-    border: white;
-    border-radius: 2px;
-    padding: 5px;
+button {
+  background-color: orange;
+  color: white;
+  border: white;
+  border-radius: 2px;
+  padding: 5px;
 }
-button:hover{
-    background-color: grey;
-    border-radius: 5px;
-    color: red;
+button:hover {
+  background-color: grey;
+  border-radius: 5px;
+  color: red;
 }
-label#erforderlich::after{
-content: "(erforderlich)";
+label#erforderlich::after {
+  content: "(erforderlich)";
 }
-label input:active{
-    background-color: lightpink;
+label#erforderlich input {
+  border: none;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
 }
-legend{
-    background-color: blue;
-    color: white;
-    border-radius: 5px;
-    padding: 5 10px;
-    text-transform: uppercase;
+label input:active:not(select, textarea) {
+  background-color: lightpink;
 }
-fieldset fieldset{
-    border-radius: 5px;
-    border-bottom: 1px;
-    border-right: 1px;
+legend {
+  background-color: blue;
+  color: white;
+  border-radius: 5px;
+  padding: 5 10px;
+  text-transform: uppercase;
 }
+fieldset fieldset:not(select, textarea) {
+  border-radius: 5px;
+  border-bottom: 1px;
+  border-right: 1px;
+}
+
 /* Funktioniert nicht
 fieldset h2{
     background: linear-gradient(to bottom right right, blue, white);
