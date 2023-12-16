@@ -31,4 +31,8 @@ body {
     grid-template-columns: 70% auto;
     grid-template-rows: 1fr 2fr 1fr;
   }
+  nav ul {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
 }
