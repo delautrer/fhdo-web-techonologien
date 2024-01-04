@@ -41,7 +41,7 @@ nav ul li {
 nav a:hover {
   background-color: grey;
 }
-header nav {
+nav {
   position: sticky;
   top: 0;
   margin-bottom: 5px;
