@@ -1,4 +1,4 @@
-/*nav element wird zum berseker und bestimmt ihre höhe nun allein sobald breite < 1024px*/
+/*nav element wird zum berserker und bestimmt ihre höhe nun allein sobald breite < 1024px*/
 /*sobald media screen mit < 768px im spiel ist, erhalten nav und main unerwartet mehr höhe als sie haben sollen*/
 
 header {
