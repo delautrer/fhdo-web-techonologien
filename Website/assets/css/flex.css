@@ -2,10 +2,64 @@ body {
   display: flex;
   flex-direction: column;
 }
-.flexcontainer {
+.flexcontainer,
+.flexcontainer2 {
   display: flex;
   flex-direction: row;
 }
 main {
   width: 100%;
+}
+
+footer {
+  text-align: center;
+}
+@media screen and (min-width: 1024px) {
+  div.flexcontainer {
+    flex-direction: row;
+  }
+  div.flexcontainer {
+    align-items: end;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  div.flexcontainer {
+    flex-direction: column;
+  }
+  div.flexcontainer kopf {
+    align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header div img {
+    width: 40%;
+    height: auto;
+  }
+  header div h1 {
+    font-size: 30px;
+  }
+  div.flexcontainer2 {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header div img {
+    width: 30%;
+    height: auto;
+  }
+  header div h1 {
+    font-size: 20px;
+  }
+  div.flexcontainer2 {
+    flex-direction: column;
+  }
+  aside {
+    display: none;
+  }
+  nav ul {
+    flex-direction: column;
+  }
 }
