@@ -75,16 +75,12 @@ footer {
       "haupt"
       "zusatz"
       "fuss";
-
-    grid-template-columns: auto;
-    grid-template-rows: auto;
   }
   nav ul {
     flex-direction: column;
   }
   header div img {
     width: 30%;
-    height: auto;
   }
   header div h1 {
     font-size: 20px;

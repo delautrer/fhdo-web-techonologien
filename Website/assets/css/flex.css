@@ -27,7 +27,7 @@ footer {
   div.flexcontainer {
     flex-direction: column;
   }
-  div.flexcontainer kopf {
+  div.flexcontainer .kopf {
     align-items: flex-start;
   }
 }
@@ -48,13 +48,9 @@ footer {
 @media screen and (max-width: 480px) {
   header div img {
     width: 30%;
-    height: auto;
   }
   header div h1 {
     font-size: 20px;
-  }
-  div.flexcontainer2 {
-    flex-direction: column;
   }
   aside {
     display: none;
