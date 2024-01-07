@@ -23,7 +23,8 @@ label#erforderlich input {
 }
 
 input:invalid {
-  border: 2px solid red !important;
+  border-left: 2px solid red !important;
+  border-top: 2px solid red !important;
 }
 
 label input:active:not(select, textarea) {
