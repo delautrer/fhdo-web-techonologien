@@ -11,22 +11,31 @@ button {
   border-radius: 2px;
   padding: 5px;
 }
+
 button:hover {
   background-color: grey;
   border-radius: 5px;
   color: red;
 }
+
 label#erforderlich::after {
   content: "(erforderlich)";
 }
+
 label#erforderlich input {
   border: none;
   border-top: 1px solid black;
   border-left: 1px solid black;
 }
+
+input:invalid {
+  border: 2px solid red !important;
+}
+
 label input:active:not(select, textarea) {
   background-color: lightpink;
 }
+
 legend {
   background-color: blue;
   color: white;
@@ -34,6 +43,7 @@ legend {
   padding: 5 10px;
   text-transform: uppercase;
 }
+
 fieldset fieldset:not(select, textarea) {
   border-radius: 5px;
   border-bottom: 1px;
