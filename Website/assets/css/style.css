@@ -1,3 +1,14 @@
+body {
+  /* margin: 8px;
+  min-height: calc(100vh - (2 * 8px));
+  width: calc(100vw - (2 * 8px)); */
+  margin: 0;
+  padding: 8px;
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
 h1 {
   color: rgb(42, 152, 189);
   text-shadow: 1px 1px black;
@@ -13,13 +24,16 @@ h1#title {
 h2 {
   color: orange;
   font-weight: bolder;
-  background: linear-gradient(90deg, orange 30%, rgba(255, 166, 0, 0) 100%);
+  background: linear-gradient(90deg, orange 50%, #ffa50012 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  width: fit-content;
 }
 
 aside {
   background-color: lightblue;
+  height: fit-content;
+  padding: 0px 16px 16px 16px;
 }
 
 nav ul li a {
@@ -56,8 +70,7 @@ nav a:hover {
 
 nav {
   position: sticky;
-  top: 0;
-  margin-bottom: 5px;
+  top: 5px;
   display: flex;
   align-items: center;
   width: 100%;
@@ -70,6 +83,7 @@ nav ul {
   display: flex;
   gap: 10px;
   width: 100%;
+  margin: 0;
 }
 
 table#kurse thead tr {
@@ -123,7 +137,7 @@ header #flexcontainer>h1#title {
 
 footer {
   position: sticky;
-  bottom: 0;
+  /* bottom: 0; */
   align-items: end;
 }
 
