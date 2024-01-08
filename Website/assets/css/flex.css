@@ -1,6 +1,7 @@
 body {
   display: flex;
   flex-direction: column;
+  gap: 8px;
 }
 
 .flexcontainer,
@@ -9,40 +10,63 @@ body {
   flex-direction: row;
 }
 
-.flexcontainer2 {
-  margin-top: 20px;
+.flexcontainer {
+  gap: 20px;
 }
+
+/* .flexcontainer2 {
+  margin-top: 20px;
+} */
 
 header {
   height: 90px;
+  width: 350px;
+  flex-shrink: 0;
 }
 
 main {
   width: 100%;
 }
 
-head footer {
-  text-align: center;
+nav {
+  width: 100%;
+}
+
+aside {
+  width: 300px;
+  flex-shrink: 0;
+  box-sizing: border-box;
 }
 
 @media screen and (min-width: 1024px) {
 
   div.flexcontainer {
     flex-direction: row;
+    /* align-items: end; */
   }
 
-  div.flexcontainer {
-    align-items: end;
+
+  nav {
+    height: 90px;
   }
 }
 
 @media screen and (max-width: 1024px) {
   div.flexcontainer {
     flex-direction: column;
+    width: 100%;
+  }
+
+  header {
+    width: 100% !important;
   }
 
   div.flexcontainer .kopf {
     align-items: flex-start;
+  }
+
+  .flexcontainer {
+    gap: 0px;
   }
 }
 
@@ -54,6 +78,10 @@ head footer {
   div.flexcontainer2 {
     flex-direction: column;
     margin-top: 0px;
+  }
+
+  aside {
+    width: 100%;
   }
 }
 
