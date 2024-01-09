@@ -29,13 +29,10 @@ body {
     "main zusatz"
     "fuss fuss";
   grid-template-columns: 1fr 30%;
-  grid-template-rows: 100px 50px 2fr 5%;
+  grid-template-rows: 100px 50px 2fr 20px;
   column-gap: 20px;
 }
 
-footer {
-  text-align: center;
-}
 
 @media screen and (min-width: 1024px) {
   body {
@@ -60,7 +57,7 @@ footer {
       "fuss";
 
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto 1fr 1fr;
+    grid-template-rows: auto auto auto 1fr 20px;
   }
 
   header {
@@ -69,6 +66,10 @@ footer {
 
   main {
     margin-top: none;
+  }
+
+  h1#title {
+    font-size: 30px !important;
   }
 }
 
@@ -92,11 +93,11 @@ footer {
 
   /* header div img {
     width: 30%;
-  }
+  }*/
 
-  header div h1 {
-    font-size: 20px;
-  } */
+  h1#title {
+    font-size: 20px !important;
+  }
 
   aside {
     display: none;

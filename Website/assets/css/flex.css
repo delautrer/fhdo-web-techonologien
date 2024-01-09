@@ -1,60 +1,99 @@
 body {
   display: flex;
   flex-direction: column;
+  gap: 8px;
 }
+
 .flexcontainer,
 .flexcontainer2 {
   display: flex;
   flex-direction: row;
 }
+
+.flexcontainer {
+  gap: 20px;
+}
+
+/* .flexcontainer2 {
+  margin-top: 20px;
+} */
+
+header {
+  height: 90px;
+  width: 350px;
+  flex-shrink: 0;
+}
+
 main {
   width: 100%;
 }
 
-footer {
-  text-align: center;
+nav {
+  width: 100%;
 }
+
+aside {
+  width: 300px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
 @media screen and (min-width: 1024px) {
+
   div.flexcontainer {
     flex-direction: row;
+    /* align-items: end; */
   }
-  div.flexcontainer {
-    align-items: end;
+
+
+  nav {
+    height: 90px;
   }
 }
 
 @media screen and (max-width: 1024px) {
   div.flexcontainer {
     flex-direction: column;
+    width: 100%;
   }
+
+  header {
+    width: 100% !important;
+  }
+
   div.flexcontainer .kopf {
     align-items: flex-start;
+  }
+
+  .flexcontainer {
+    gap: 0px;
   }
 }
 
 @media screen and (max-width: 768px) {
-  header div img {
-    width: 40%;
-    height: auto;
+  h1#title {
+    font-size: 30px !important;
   }
-  header div h1 {
-    font-size: 30px;
-  }
+
   div.flexcontainer2 {
     flex-direction: column;
+    margin-top: 0px;
+  }
+
+  aside {
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 480px) {
-  header div img {
-    width: 30%;
+  h1#title {
+    font-size: 20px !important;
   }
-  header div h1 {
-    font-size: 20px;
-  }
+
   aside {
     display: none;
   }
+
   nav ul {
     flex-direction: column;
   }
