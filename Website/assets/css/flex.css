@@ -14,9 +14,9 @@ body {
   gap: 20px;
 }
 
-/* .flexcontainer2 {
-  margin-top: 20px;
-} */
+.flexcontainer2 {
+  margin-bottom: 10px;
+}
 
 header {
   height: 90px;
