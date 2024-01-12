@@ -3,8 +3,7 @@ const getViewportWidth = () =>
 console.log(`Die Viewportbreite beträgt: ${getViewportWidth()} Pixel`);
 
 class Kurs {
-  constructer(id, modulId, name, typ, studiengang, semester) {
-    this.id = id;
+  constructer(modulId, name, typ, studiengang, semester) {
     this.modulId = modulId;
     this.name = name;
     this.typ = typ;
