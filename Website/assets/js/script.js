@@ -3,7 +3,7 @@ const getViewportWidth = () =>
 console.log(`Die Viewportbreite beträgt: ${getViewportWidth()} Pixel`);
 
 class Kurs {
-  constructer(modulId, name, typ, studiengang, semester) {
+  constructor(modulId, name, typ, studiengang, semester) {
     this.modulId = modulId;
     this.name = name;
     this.typ = typ;
@@ -11,7 +11,15 @@ class Kurs {
     this.semester = semester;
   }
   istValiderTyp(typ) {
-    if (typ === this.typ) {
+    if (
+      typ === "V" ||
+      typ === "Ü" ||
+      typ === "P" ||
+      typ === "ÜPP" ||
+      typ === "SV" ||
+      typ === "T" ||
+      typ === "S"
+    ) {
       return true;
     }
     return false;
@@ -19,7 +27,7 @@ class Kurs {
 }
 
 class Lehrperson {
-  constructer(id, nachname) {
+  constructor(id, nachname) {
     this.id = id;
     this.nachname = nachname;
   }
