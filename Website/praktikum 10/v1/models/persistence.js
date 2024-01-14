@@ -1,9 +1,15 @@
 const fetcher = require("../models/scheduleFetcher");
+const studiengang = require("../models/studiengang");
 
 // [TODO]
 // Weitere benoetigte Module einbinden
 
 const lehrangebot = [];
+fetcher.then.courseOfStudy;
+//hallo marvin, falls du das ließt,
+//sind wir erfolgreich gescheitert,
+//aus der scheduleFetcher.js datei erhalten wir viel mehr daten als wir attribute haben,
+//ka was hier zu tun ist
 
 /**
  * Initialisiert die Daten der Anwendung, also die verfuegbaren Studiengaenge mit den
@@ -12,6 +18,7 @@ const lehrangebot = [];
  * mittels map-Funktion in die Datenstrukturen unserer Anwendung konvertiert. Schliesslich
  * wird jeder erhaltene Datensatz im lehrangebot-Array hinzugefuegt.
  */
+
 const initialisiereLehrangebot = () => {
   fetcher.fetchScheduleData().then((daten) => {
     daten
