@@ -1,15 +1,13 @@
-const fetcher = require("../models/scheduleFetcher");
-const studiengang = require("../models/studiengang");
+const fetcher = require("./scheduleFetcher");
 
 // [TODO]
 // Weitere benoetigte Module einbinden
+const Kurs = require("../models/kurs");
+const Studiengang = require("../models/studiengang");
+const Lehrperson = require("../models/lehrperson");
+const Termin = require("../models/termin");
 
 const lehrangebot = [];
-fetcher.then.courseOfStudy;
-//hallo marvin, falls du das ließt,
-//sind wir erfolgreich gescheitert,
-//aus der scheduleFetcher.js datei erhalten wir viel mehr daten als wir attribute haben,
-//ka was hier zu tun ist
 
 /**
  * Initialisiert die Daten der Anwendung, also die verfuegbaren Studiengaenge mit den
@@ -55,6 +53,26 @@ const initialisiereLehrangebot = () => {
 // [TODO]
 // Weitere Funktionen aus der Aufgabenstellung implementieren
 
+const ermittleStudiengangZuId = (id) => {
+  return lehrangebot.find((studiengang) => studiengang.id === id);
+};
+
+const ermittleKursZuStudiengangUndId = (studiengangId, kursId) => {
+  return ermittleStudiengangZuId(studiengangId).getKursById(kursId);
+};
+
+const holeAlleStudiengaenge = () => {
+  return lehrangebot;
+};
+
 // [TODO]
 // Schnittstelle des Moduls definieren: Lehrangebot-Array und Funktionen
 // von aussen zugreifbar machen
+
+module.exports = {
+  ermittleKursZuStudiengangUndId: ermittleKursZuStudiengangUndId,
+  ermittleStudiengangZuId: ermittleStudiengangZuId,
+  holeAlleStudiengaenge: holeAlleStudiengaenge,
+  initialisiereLehrangebot: initialisiereLehrangebot,
+  lehrangebot: lehrangebot,
+};

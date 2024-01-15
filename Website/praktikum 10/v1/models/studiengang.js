@@ -3,11 +3,11 @@
 // const kurs2 = kurs.kurs2;
 // const kurs3 = kurs.kurs3;
 
-export default class Studiengang {
-  constructor(id, name) {
+class Studiengang {
+  constructor(id, name, kurse = []) {
     this.id = id;
     this.name = name;
-    this.kurse = [];
+    this.kurse = kurse;
   }
   getKursById(id) {
     return this.kurse.find((kurs) => kurs.id === id);
@@ -34,6 +34,7 @@ export default class Studiengang {
 //   return modulA.modulId - modulB.modulId;
 // });
 
+module.exports = Studiengang;
 // module.exports = {
 //   Studiengang: Studiengang,
 //   studiengang1: studiengang1,

@@ -3,7 +3,7 @@
 // const kurs2 = kurs.kurs2;
 // const kurs3 = kurs.kurs3;
 
-export default class Semesterplan {
+class Semesterplan {
   static idCounter = 1;
   constructor(name, semester, studiengang) {
     this.id = Semesterplan.idCounter++;
@@ -38,6 +38,8 @@ export default class Semesterplan {
 // semesterplan.addKurse([kurs1, kurs2, kurs3]);
 
 // semesterplan.kurse.sort((modulA, modulB) => modulA.modulId - modulB.modulId);
+
+module.exports.Semesterplan = Semesterplan;
 
 // module.exports = {
 //   Semesterplan: Semesterplan,

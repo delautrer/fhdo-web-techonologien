@@ -1,4 +1,4 @@
-export default class Termin {
+class Termin {
   constructor(beginn, dauer, wochentag, raum) {
     this.beginn = beginn;
     this.dauer = dauer;
@@ -7,4 +7,4 @@ export default class Termin {
   }
 }
 
-// module.exports.Termin = Termin;
+module.exports = Termin;

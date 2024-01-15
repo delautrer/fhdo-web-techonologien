@@ -1,15 +1,15 @@
 const KURS_TYPEN = ["V", "Ü", "P", "ÜPP", "SV", "T", "S", "Org"];
 
-export default class Kurs {
+class Kurs {
   constructor(
     modulId,
     name,
     typ,
     studiengang,
     semester,
-    termin,
+    gruppenbuchstaben,
     lehrperson,
-    gruppenbuchstaben
+    termin
   ) {
     if (!this.istValiderTyp(typ)) {
       throw new Error("Ungültiger Kurs-Typ");
@@ -53,6 +53,8 @@ export default class Kurs {
 //   109,
 //   new Termin(18, 6, "Freitag", "C.3.31")
 // );
+
+module.exports = Kurs;
 
 // module.exports = {
 //   kurs1: kurs1,
