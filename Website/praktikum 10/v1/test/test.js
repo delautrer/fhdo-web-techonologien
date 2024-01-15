@@ -27,6 +27,6 @@ const server = http.createServer((res, req) => {
 });
 
 server.listen(8844, function () {
-  console.log("Erfolgreich");
+  console.log("Server erfolgreich gestartet");
   initialisiereLehrangebot();
 });

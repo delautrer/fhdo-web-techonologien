@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <%- include('../static/head'); %> <%- include('../static/header'); %> <%-
+  include('../static/nav'); %>
+  <main>
+    <form action="waehleStudiengang" method="post">
+      <fieldset>
+        <legend>Studiengang</legend>
+        <select name="id">
+          <% studiengaenge.forEach((studiengang) => { %>
+          <option value="<%= studiengang.id %>"><%= studiengang.name %></option>
+          <% }); %>
+        </select>
+      </fieldset>
+      <br />
+      <button type="submit">Weiter</button>
+    </form>
+  </main>
+  <%- include('../static/aside'); %> <%- include('../static/footer'); %>
+</html>

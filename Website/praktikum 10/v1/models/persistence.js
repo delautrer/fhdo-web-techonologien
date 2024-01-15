@@ -6,8 +6,10 @@ const Kurs = require("../models/kurs");
 const Studiengang = require("../models/studiengang");
 const Lehrperson = require("../models/lehrperson");
 const Termin = require("../models/termin");
+const Semesterplan = require("../models/semesterplan");
 
 const lehrangebot = [];
+const semesterplaene = [];
 
 /**
  * Initialisiert die Daten der Anwendung, also die verfuegbaren Studiengaenge mit den
@@ -54,16 +56,56 @@ const initialisiereLehrangebot = () => {
 // Weitere Funktionen aus der Aufgabenstellung implementieren
 
 const ermittleStudiengangZuId = (id) => {
-  return lehrangebot.find((studiengang) => studiengang.id === id);
+  return lehrangebot.find((studiengang) => studiengang.id == id);
 };
 
 const ermittleKursZuStudiengangUndId = (studiengangId, kursId) => {
-  return ermittleStudiengangZuId(studiengangId).getKursById(kursId);
+  const studiengang = ermittleStudiengangZuId(studiengangId);
+  return studiengang.getKursById(kursId);
 };
 
 const holeAlleStudiengaenge = () => {
   return lehrangebot;
 };
+
+const erstelleSemesterplan = (name, semester, jahr, studiengangId, kurse) => {
+  const studiengang = ermittleStudiengangZuId(studiengangId);
+  const semesterplan = new Semesterplan(
+    name,
+    `${semester} ${jahr}`,
+    studiengang
+  );
+
+  const kurseObj = kurse.map((kursid) =>
+    ermittleKursZuStudiengangUndId(studiengangId, kursid)
+  );
+
+  console.log(kurseObj);
+
+  semesterplan.addKurse(kurseObj);
+  semesterplaene.push(semesterplan);
+};
+
+const ermittleSemesterplanZuId = (id) => {
+  return semesterplaene.find((semesterplan) => semesterplan.id == id);
+};
+
+const holePlaeneGruppiertNachSemester = () => {
+  return gruppiereNach(semesterplaene, "semester");
+};
+
+const holePlaeneGruppiertNachStudiengang = () => {
+  return gruppiereNach(semesterplaene, "studiengang");
+};
+
+const gruppiereNach = (array, eigenschaft) =>
+  array.reduce((ergebnis, element) => {
+    if (!ergebnis[element[eigenschaft]]) {
+      ergebnis[element[eigenschaft]] = [];
+    }
+    ergebnis[element[eigenschaft]].push(element);
+    return ergebnis;
+  }, {});
 
 // [TODO]
 // Schnittstelle des Moduls definieren: Lehrangebot-Array und Funktionen
@@ -74,5 +116,9 @@ module.exports = {
   ermittleStudiengangZuId: ermittleStudiengangZuId,
   holeAlleStudiengaenge: holeAlleStudiengaenge,
   initialisiereLehrangebot: initialisiereLehrangebot,
+  erstelleSemesterplan: erstelleSemesterplan,
+  ermittleSemesterplanZuId: ermittleSemesterplanZuId,
+  holePlaeneGruppiertNachSemester: holePlaeneGruppiertNachSemester,
+  holePlaeneGruppiertNachStudiengang: holePlaeneGruppiertNachStudiengang,
   lehrangebot: lehrangebot,
 };

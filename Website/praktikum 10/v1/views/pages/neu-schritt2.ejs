@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <%- include('../static/head'); %> <%- include('../static/header'); %> <%-
+  include('../static/nav'); %>
+  <main>
+    <form action="neu" method="POST">
+        <fieldset>
+            <h2>Neuen Semesterplan erstellen: Schritt 2</h2>
+            <fieldset>
+                <legend>basisdaten</legend>
+                <p>
+                    <input type="hidden" name="studiengangId" value="<%= studiengangId %>">
+                    <p><b>Studiengang: <%= studiengangName %></b></p>
+                    <label id="erforderlich"><span>Name:</span> 
+                        <!-- ^[a-zA-Z0-9-]{1,150}$ -->
+                        <input autofocus required pattern="[a-zA-Z0-9-]+" name="name" maxlength="150">
+                    </label>
+                </p>
+            </fieldset> 
+            <br>
+            <fieldset> 
+                <legend>semester</legend>
+                <p> 
+                    <label><span>Semester:</span>
+                        <input name="semester" value="SoSe" type="radio" checked>Sommersemester
+                        <input name="semester" value="WiSe" type="radio">Wintersemester
+                    </label>
+                </p>
+                <p>
+                    <label id="erforderlich"><span>Jahr: </span>
+                        <input required name="jahr" value="2022" type="number" min="2000" max="2999">
+                    </label>
+                </p>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>kurse</legend>
+                <p>
+                  <span>Kurse:</span> 
+                  <% kurse.forEach((kurs) => { %>
+                    <label>
+                      <input name="kurse[]" value="<%= kurs.id %>" type="checkbox"><%= kurs.name %> (<%= kurs.typ %>)
+                    </label>
+                  <% }); %>
+                </p>
+            </fieldset>
+            <br>
+            <button type="submit">Erstellen</button>
+        </fieldset>
+    </form>
+  </main>
+  <%- include('../static/aside'); %> <%- include('../static/footer'); %>
+</html>

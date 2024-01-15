@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <%- include('../static/head'); %> <%- include('../static/header'); %> <%-
+  include('../static/nav'); %>
+  <main>
+    <h1>Liste der Semesterpläne</h1>
+    <section>
+      <% semesterplaeneListe.forEach((semesterplan) => { %>
+      <h2><%= semesterplan[0] %></h2>
+      <ul>
+        <% semesterplan[1].forEach((plan) => { %>
+        <li>
+          <a href="plan?id=<%= plan.id %>">
+            <%= plan.name %> (<%= plan.getAnzahlKurse() %> Kurse, <%=
+            plan.getAnzahlStunden() %> Stunden)
+          </a>
+        </li>
+        <% }); %>
+      </ul>
+      <% }); %>
+    </section>
+  </main>
+  <%- include('../static/aside'); %> <%- include('../static/footer'); %>
+  <script src="/js/index.js"></script>
+</html>

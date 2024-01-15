@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <%- include('../static/head'); %> <%- include('../static/header'); %> <%-
+  include('../static/nav'); %>
+  <main>
+    <h1>Semesterplan - Detailseite</h1>
+    <section class="haupt-section">
+      <h2>Informationen zum Semesterplan</h2>
+      <p><span>Name:</span> <%= semesterplanName %></p>
+      <p><span>Studiengang:</span> <%= studiengangName %></p>
+      <p><span>Semester:</span> <%= semesterplanSemester %></p>
+    </section>
+    <section>
+      <h2>Gewählte Kurse</h2>
+      <table id="kurse">
+        <thead>
+          <tr>
+            <th>Stunde</th>
+            <th>Wochentag</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% semesterplanKurse.forEach((kurs) => { %>
+          <tr>
+            <td><%= kurs.termin.beginn %></td>
+            <td><%= kurs.termin.wochentag %></td>
+            <td>
+              <a href="kurs?sid=<%= kurs.studiengang %>&kid=<%= kurs.id %>"
+                ><%= kurs.name %> (<%= kurs.typ %>)</a
+              >
+            </td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <%- include('../static/aside'); %> <%- include('../static/footer'); %>
+</html>
