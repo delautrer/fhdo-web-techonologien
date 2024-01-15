@@ -5,7 +5,7 @@ console.log(`Die Viewportbreite beträgt: ${getViewportWidth()} Pixel`);
 const KURS_TYPEN = ["V", "Ü", "P", "ÜPP", "SV", "T", "S"];
 
 class Kurs {
-  constructor(modulId, name, typ, studiengang, semester, termin) {
+  constructor(modulId, name, typ, studiengang, semester, termin, lehrperson) {
     if (!this.istValiderTyp(typ)) {
       throw new Error("Ungültiger Kurs-Typ");
     }
@@ -17,6 +17,7 @@ class Kurs {
     this.semester = semester;
     this.termin = termin;
     this.id = modulId + termin.wochentag + termin.beginn + termin.raum;
+    this.lehrperson = lehrperson;
   }
   istValiderTyp(typ) {
     return KURS_TYPEN.includes(typ);
@@ -88,7 +89,8 @@ const kurs1 = new Kurs(
   "V",
   "Inf",
   3,
-  new Termin(8, 1, "Montag", "A.E.01")
+  new Termin(8, 1, "Montag", "A.E.01"),
+  new Lehrperson("ABC", "Aabbcc")
 );
 const kurs2 = new Kurs(
   "123456",
@@ -96,7 +98,8 @@ const kurs2 = new Kurs(
   "Ü",
   "Lap",
   1,
-  new Termin(8, 2, "Dienstag", "A.E.02")
+  new Termin(8, 2, "Dienstag", "A.E.02"),
+  new Lehrperson("DEF", "Ddeeff")
 );
 const kurs3 = new Kurs(
   "42069",
@@ -104,7 +107,8 @@ const kurs3 = new Kurs(
   "ÜPP",
   "DataScience",
   109,
-  new Termin(18, 6, "Freitag", "C.3.31")
+  new Termin(18, 6, "Freitag", "C.3.31"),
+  new Lehrperson("GHI", "Gghhii")
 );
 
 const studiengang = new Studiengang("WIPB", "Wirtschaft Inf. BPO 2018");
