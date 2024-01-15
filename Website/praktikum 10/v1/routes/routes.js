@@ -96,9 +96,9 @@ router.post("/waehleStudiengang", (req, res) => {
   }
   const studiengang = ermittleStudiengangZuId(studiengangId);
 
-  const kurse = studiengang.kurse.filter(
-    (kurs) => kurs.studiengang == studiengangId
-  );
+  const kurse = studiengang.kurse
+    .filter((kurs) => kurs.studiengang == studiengangId)
+    .sort((a, b) => a.modulId - b.modulId);
 
   res.render("../views/pages/neu-schritt2.ejs", {
     kurse: kurse,

@@ -80,8 +80,6 @@ const erstelleSemesterplan = (name, semester, jahr, studiengangId, kurse) => {
     ermittleKursZuStudiengangUndId(studiengangId, kursid)
   );
 
-  console.log(kurseObj);
-
   semesterplan.addKurse(kurseObj);
   semesterplaene.push(semesterplan);
 };

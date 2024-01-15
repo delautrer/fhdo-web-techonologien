@@ -36,11 +36,11 @@
             <fieldset>
                 <legend>kurse</legend>
                 <p>
-                  <span>Kurse:</span> 
+                  <span>Kurse:</span> <br>
                   <% kurse.forEach((kurs) => { %>
                     <label>
-                      <input name="kurse[]" value="<%= kurs.id %>" type="checkbox"><%= kurs.name %> (<%= kurs.typ %>)
-                    </label>
+                      <input name="kurse[]" value="<%= kurs.id %>" type="checkbox"><%= kurs.name %> (<%= kurs.typ %> - <%= kurs.termin.wochentag %> <%= kurs.termin.beginn %>. Stunde )
+                    </label><br>
                   <% }); %>
                 </p>
             </fieldset>
