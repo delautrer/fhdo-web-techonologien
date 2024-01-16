@@ -1,25 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <%- include('../static/head'); %> <%- include('../static/header'); %> <%-
-  include('../static/nav'); %>
-  <main>
-    <h1>Liste der Semesterpläne</h1>
-    <section>
-      <% semesterplaeneListe.forEach((semesterplan) => { %>
-      <h2><%= semesterplan[0] %></h2>
-      <ul>
-        <% semesterplan[1].forEach((plan) => { %>
-        <li>
-          <a href="plan?id=<%= plan.id %>">
-            <%= plan.name %> (<%= plan.getAnzahlKurse() %> Kurse, <%=
-            plan.getAnzahlStunden() %> Stunden)
-          </a>
-        </li>
+  <head>
+    <%- include('../static/head'); %>
+    <link rel="stylesheet" href="/css/flex.css" />
+    <title>Semesterpläne</title>
+  </head>
+
+  <div class="flexcontainer">
+   <%- include('../static/header'); %>
+   <%- include('../static/nav'); %>
+  </div>
+
+  <div class="flexcontainer2">
+    <main>
+      <h1>Liste der Semesterpläne</h1>
+      <form action="index" method="get">
+        <label for="gruppierung">Pläne gruppieren nach: </label>
+        <select name="gruppierung">
+          <option value="semester">Semester</option>
+          <option value="studiengang">Studiengang</option>
+        </select>
+        <input type="submit" value="Gruppieren">
+      </form>
+      <section>
+        <% semesterplaeneListe.forEach((semesterplan) => { %>
+        <h2><%= semesterplan[0] %></h2>
+        <ul>
+          <% semesterplan[1].forEach((plan) => { %>
+          <li>
+            <a href="plan?id=<%= plan.id %>">
+              <%= plan.name %> (<%= plan.getAnzahlKurse() %> Kurse, <%=
+              plan.getAnzahlStunden() %> Stunden)
+            </a>
+          </li>
+          <% }); %>
+        </ul>
         <% }); %>
-      </ul>
-      <% }); %>
-    </section>
-  </main>
-  <%- include('../static/aside'); %> <%- include('../static/footer'); %>
-  <script src="/js/index.js"></script>
+      </section>
+    </main>
+    <%- include('../static/aside'); %> <%- include('../static/footer'); %>
+  </div>
 </html>

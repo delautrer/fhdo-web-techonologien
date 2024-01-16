@@ -12,11 +12,11 @@ button:hover {
   color: red;
 }
 
-label#erforderlich::after {
+label.erforderlich::after {
   content: "(erforderlich)";
 }
 
-label#erforderlich input {
+label.erforderlich input {
   border: none;
   border-top: 1px solid black;
   border-left: 1px solid black;

@@ -1,11 +1,5 @@
 const express = require("express");
 
-const Kurs = require("../models/kurs");
-const Studiengang = require("../models/studiengang");
-const Lehrperson = require("../models/lehrperson");
-const Termin = require("../models/termin");
-const Semesterplan = require("../models/semesterplan");
-
 // [TODO]
 // Weitere benoetigte Module einbinden
 const {
@@ -43,12 +37,16 @@ router.get("/plan", (req, res, next) => {
   // ID anzeigen (ID als Anfrage/Query-Parameter gegeben)
   const planId = req.query.id;
   const semesterplan = ermittleSemesterplanZuId(planId);
+  if(!semesterplan) {
+    res.redirect("/index");
+  }
 
   res.render("../views/pages/plan.ejs", {
     semesterplanName: semesterplan.name,
     studiengangName: semesterplan.studiengang.name,
     semesterplanSemester: semesterplan.semester,
     semesterplanKurse: semesterplan.kurse,
+    studiengangId: semesterplan.studiengang.id
   });
 });
 
@@ -62,7 +60,7 @@ router.get("/kurs", (req, res, next) => {
   res.render("../views/pages/kurs.ejs", {
     kursModulId: kurs.modulId,
     kursTyp: kurs.typ,
-    kursStudiengang: kurs.studiengang,
+    kursStudiengang: studiengangId,
     kursSemester: kurs.semester,
     kursGruppenbuchstaben: kurs.gruppenbuchstaben,
     lehrpersonId: kurs.lehrperson.id,
@@ -97,7 +95,7 @@ router.post("/waehleStudiengang", (req, res) => {
   const studiengang = ermittleStudiengangZuId(studiengangId);
 
   const kurse = studiengang.kurse
-    .filter((kurs) => kurs.studiengang == studiengangId)
+    //.filter((kurs) => kurs.studiengang == studiengangId)
     .sort((a, b) => a.modulId - b.modulId);
 
   res.render("../views/pages/neu-schritt2.ejs", {
@@ -128,5 +126,9 @@ router.post("/neu", (req, res) => {
 router.get("/", (req, res) => {
   res.redirect("/index");
 });
+
+router.get("*", (req, res) => {
+  res.render("../views/static/404.ejs");
+})
 
 module.exports = router;

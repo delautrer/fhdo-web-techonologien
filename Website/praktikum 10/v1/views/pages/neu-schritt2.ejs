@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <%- include('../static/head'); %> <%- include('../static/header'); %> <%-
-  include('../static/nav'); %>
+    <head>
+      <%- include('../static/head'); %>
+      <link rel="stylesheet" href="/css/grid.css" />
+      <title>Neuen Semesterplan erstellen</title>
+    </head>
+     <%- include('../static/header'); %> <%-
+    include('../static/nav'); %>
   <main>
     <form action="neu" method="POST">
         <fieldset>
@@ -11,7 +16,7 @@
                 <p>
                     <input type="hidden" name="studiengangId" value="<%= studiengangId %>">
                     <p><b>Studiengang: <%= studiengangName %></b></p>
-                    <label id="erforderlich"><span>Name:</span> 
+                    <label class="erforderlich"><span>Name:</span> 
                         <!-- ^[a-zA-Z0-9-]{1,150}$ -->
                         <input autofocus required pattern="[a-zA-Z0-9-]+" name="name" maxlength="150">
                     </label>
@@ -27,7 +32,7 @@
                     </label>
                 </p>
                 <p>
-                    <label id="erforderlich"><span>Jahr: </span>
+                    <label class="erforderlich"><span>Jahr: </span>
                         <input required name="jahr" value="2022" type="number" min="2000" max="2999">
                     </label>
                 </p>

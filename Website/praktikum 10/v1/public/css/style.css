@@ -122,10 +122,6 @@ footer {
 
 header {
   /* overflow: scroll; */
-  width: 100%;
-}
-
-header #flexcontainer {
   display: flex;
   align-items: end;
   align-items: center;
@@ -133,7 +129,7 @@ header #flexcontainer {
   height: 100%;
 }
 
-header #flexcontainer > img {
+header > img {
   height: 100%;
   /* aspect-ratio: 1 / 1; */
 }

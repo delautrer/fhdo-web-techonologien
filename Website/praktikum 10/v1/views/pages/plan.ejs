@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
-  <%- include('../static/head'); %> <%- include('../static/header'); %> <%-
+  <head>
+    <%- include('../static/head'); %>
+    <link rel="stylesheet" href="/css/grid.css" />
+    <title>Semesterplan - Detailseite</title>
+  </head>
+   <%- include('../static/header'); %> <%-
   include('../static/nav'); %>
   <main>
     <h1>Semesterplan - Detailseite</h1>
@@ -26,7 +31,7 @@
             <td><%= kurs.termin.beginn %></td>
             <td><%= kurs.termin.wochentag %></td>
             <td>
-              <a href="kurs?sid=<%= kurs.studiengang %>&kid=<%= kurs.id %>"
+              <a href="kurs?sid=<%= studiengangId %>&kid=<%= kurs.id %>"
                 ><%= kurs.name %> (<%= kurs.typ %>)</a
               >
             </td>

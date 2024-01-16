@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <%- include('../static/head'); %> <%- include('../static/header'); %> <%-
-  include('../static/nav'); %>
-  <main>
-    <h1>Kurs - Detailseite</h1>
-    <section class="haupt-section">
-      <h2>Basisinformationen zum Kurs</h2>
-      <p><span>Modul-ID:</span> <%= kursModulId %></p>
-      <p><span>Typ:</span> <%= kursTyp %></p>
-      <p><span>Studiengang:</span> <%= kursStudiengang %></p>
-      <p><span>Semester:</span> <%= kursSemester %></p>
-      <p><span>Gruppenbuchstaben:</span> <%= kursGruppenbuchstaben %></p>
-    </section>
+  <head>
+    <%- include('../static/head'); %>
+    <link rel="stylesheet" href="/css/flex.css" />
+    <title>Kurs - Detailseite</title>
+  </head>
+  
+  <div class="flexcontainer">
+    <%- include('../static/header'); %>
+    <%- include('../static/nav'); %>
+  </div>
+  
+  <div class="flexcontainer2">
+    <main>
+      <h1>Kurs - Detailseite</h1>
+      <section class="haupt-section">
+        <h2>Basisinformationen zum Kurs</h2>
+        <p><span>Modul-ID:</span> <%= kursModulId %></p>
+        <p><span>Typ:</span> <%= kursTyp %></p>
+        <p><span>Studiengang:</span> <%= kursStudiengang %></p>
+        <p><span>Semester:</span> <%= kursSemester %></p>
+        <p><span>Gruppenbuchstaben:</span> <%= kursGruppenbuchstaben %></p>
+      </section>
 
-    <section class="haupt-section">
-      <h2>Lehrperson</h2>
-      <p><span>ID:</span> <%= lehrpersonId %></p>
-      <p><span>Nachmame:</span> <%= lehrpersonNachname %></p>
-    </section>
+      <section class="haupt-section">
+        <h2>Lehrperson</h2>
+        <p><span>ID:</span> <%= lehrpersonId %></p>
+        <p><span>Nachmame:</span> <%= lehrpersonNachname %></p>
+      </section>
 
-    <section class="haupt-section">
-      <h2>Termin</h2>
-      <p><span>Wochentag: </span><%= terminWochentag %></p>
-      <p><span>Stunde: </span><%= terminStunde %></p>
-      <p><span>Dauer: </span><%= terminDauer %></p>
-      <p><span>Raum: </span><%= terminRaum %></p>
-    </section>
-  </main>
-  <%- include('../static/aside'); %> <%- include('../static/footer'); %>
+      <section class="haupt-section">
+        <h2>Termin</h2>
+        <p><span>Wochentag: </span><%= terminWochentag %></p>
+        <p><span>Stunde: </span><%= terminStunde %></p>
+        <p><span>Dauer: </span><%= terminDauer %></p>
+        <p><span>Raum: </span><%= terminRaum %></p>
+      </section>
+    </main>
+    <%- include('../static/aside'); %> <%- include('../static/footer'); %>
+  </div>
 </html>
